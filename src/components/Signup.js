@@ -7,9 +7,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 const SignupSchema = yup.object().shape({
-    userName: yup
-        .string()
-        .required("Enter your name"),
+    // userName: yup
+    //     .string()
+    //     .required("Enter your name"),
     email: yup
         .string()
         .email("Enter a valid email address")
@@ -17,12 +17,12 @@ const SignupSchema = yup.object().shape({
         .required("Enter your email"),
     password: yup
         .string()
-        .min(6, "Passwords must be at least 6 characters")
+        // .min(6, "Passwords must be at least 6 characters")
         .required("Enter your password"),
-    rePassword: yup
-        .string()
-        .required('Type your password again')
-        .oneOf([yup.ref('password')], 'Passwords must match')
+    // rePassword: yup
+    //     .string()
+    //     .required('Type your password again')
+    //     .oneOf([yup.ref('password')], 'Passwords must match')
 });
 
 
@@ -52,11 +52,11 @@ const Signup = () => {
                 <label> Password </label>
                 <input
                     type="password"
-                    className={errors.rePassword && 'alertInput'}
-                    name="rePassword"
+                    className={errors.password && 'alertInput'}
+                    name="password"
                     autoComplete="off"
                     ref={register} />
-                {errors.rePassword && <div className="alertText"> {errors.rePassword.message} </div>}
+                {errors.password && <div className="alertText"> {errors.password.message} </div>}
 
 
                 <button type='submit'> Login </button>
