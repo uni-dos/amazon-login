@@ -38,17 +38,7 @@ const Signup = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className='form-container'>
 
-                <h1> Create account </h1>
-
-                <label> Your name </label>
-                <input
-                    className={errors.userName && 'alertInput'}
-                    name="userName"
-                    type="text"
-                    autoComplete="on"
-                    ref={register}
-                />
-                {errors.userName && <div className="alertText"> {errors.userName.message} </div>}
+                <h1> Sign in </h1>
 
                 <label> Email </label>
                 <input
@@ -61,21 +51,7 @@ const Signup = () => {
 
                 <label> Password </label>
                 <input
-                    className={errors.password ? 'alertInput' : 'passwordColor'}
-                    name="password"
-                    type="text"
-                    autoComplete="off"
-                    placeholder="At least 6 characters"
-                    ref={register} />
-                {errors.password && <div className="alertText"> {errors.password.message} </div>}
-
-                <p className={errors.password ? 'displayNone' : 'passwordColor'}>
-                    <img src={iFont} className="iFont" alt="info icon" />
-                 Passwords must be at least 6 characters. </p>
-
-
-                <label> Re-enter password </label>
-                <input
+                    type="password"
                     className={errors.rePassword && 'alertInput'}
                     name="rePassword"
                     autoComplete="off"
@@ -83,15 +59,15 @@ const Signup = () => {
                 {errors.rePassword && <div className="alertText"> {errors.rePassword.message} </div>}
 
 
-                <button type='submit'> Create your Amazon account </button>
+                <button type='submit'> Login </button>
 
-                <p> By creating an account, you agree to Amazon's </p>
+                <p> By continuing, you agree to Amazon's
 
-                <p> <span className="sm-font">Conditions</span> of Use and <span className='sm-font'> Privacy Notice. </span></p>
+                <span className="sm-font"> Conditions of Use</span> and <span className='sm-font'> Privacy Notice. </span></p>
 
                 <img src={hr} className="hr1" alt="horizontal line" />
 
-                <p> Already have an account?  <span>Sign-in ▸</span> </p>
+             
             </div>
         </form>
     )
